@@ -31,3 +31,19 @@ please type the mathematical operation you would like to complete:
 
     else:
         print('You have not typed a valid operator, please run the program again.')
+
+def again():
+    calc_again = input('''
+Do you want to calculate again?
+Please type Y for YES or N for NO.
+''')
+
+    if calc_again.upper() == 'Y':
+        calculate()
+
+    elif calc_again.upper() == 'N':
+        print('See you later.')
+
+    else:
+        again()
+
