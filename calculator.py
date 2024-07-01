@@ -47,3 +47,4 @@ Please type Y for YES or N for NO.
     else:
         again()
 
+calculate()
