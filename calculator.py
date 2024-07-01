@@ -11,21 +11,21 @@ please type the mathematical operation you would like to complete:
     num2=int(input("Enter Second Number : "))
 
     if operation == '+':
-        print('{} + {} = '.format(number_1, number_2))
-        print(number_1 + number_2)
+        print('{} + {} = '.format(num1, num2))
+        print(num1 + num2)
 
     elif operation == '-':
-        print('{} - {} = '.format(number_1, number_2))
-        print(number_1 - number_2)
-
+        print('{} - {} = '.format(num1, num2))
+        print(num1 - num2)
+        
     elif operation == '*':
-        print('{} * {} = '.format(number_1, number_2))
-        print(number_1 * number_2)
+        print('{} * {} = '.format(num1, num2))
+        print(num1 * num2)
 
     elif operation == '/':
-        if number_2 != 0:
-            print('{} / {} = '.format(number_1, number_2))
-            print(number_1 / number_2)
+        if num2 != 0:
+            print('{} / {} = '.format(num1, num2))
+            print(num1 / num2)
         else:
             print("Error! Division by zero is not allowed.")
 
