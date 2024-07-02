@@ -24,3 +24,10 @@ def main():
             break
         except ValueError:
             print("Invalid input. Please enter a positive integer.")
+
+    password = generate_password(length)
+    print("Generated Password:")
+    print(password)
+
+if __name__ == "__main__":
+    main()
