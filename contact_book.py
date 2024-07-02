@@ -25,3 +25,23 @@ class ContactBook:
             print("Contact List:")
             for i, contact in enumerate(self.contacts, 1):
                 print(f"{i}. {contact.name} - {contact.phone_number}")
+     def search_contact(self):
+        search_term = input("Enter name or phone number to search: ")
+        found_contacts = [contact for contact in self.contacts if search_term in contact.name or search_term in contact.phone_number]
+        if not found_contacts:
+            print("No contacts found.")
+        else:
+            print("Search Results:")
+            for i, contact in enumerate(found_contacts, 1):
+                print(f"{i}. {contact.name} - {contact.phone_number}")
+
+    def update_contact(self):
+        name = input("Enter contact name to update: ")
+        for contact in self.contacts:
+            if contact.name == name:
+                contact.phone_number = input("Enter new phone number: ")
+                contact.email = input("Enter new email: ")
+                contact.address = input("Enter new address: ")
+                print("Contact updated successfully!")
+                return
+        print("Contact not found.")
