@@ -25,7 +25,7 @@ class ContactBook:
             print("Contact List:")
             for i, contact in enumerate(self.contacts, 1):
                 print(f"{i}. {contact.name} - {contact.phone_number}")
-     def search_contact(self):
+    def search_contact(self):
         search_term = input("Enter name or phone number to search: ")
         found_contacts = [contact for contact in self.contacts if search_term in contact.name or search_term in contact.phone_number]
         if not found_contacts:
@@ -45,3 +45,46 @@ class ContactBook:
                 print("Contact updated successfully!")
                 return
         print("Contact not found.")
+
+    def delete_contact(self):
+        name = input("Enter contact name to delete: ")
+        for contact in self.contacts:
+            if contact.name == name:
+                self.contacts.remove(contact)
+                print("Contact deleted successfully!")
+                return
+        print("Contact not found.")
+
+def main():
+    contact_book = ContactBook()
+
+    while True:
+        print("\nContact Book Menu:")
+        print("1. Add Contact")
+        print("2. View Contacts")
+        print("3. Search Contact")
+        print("4. Update Contact")
+        print("5. Delete Contact")
+        print("6. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            contact_book.add_contact()
+        elif choice == "2":
+            contact_book.view_contacts()
+        elif choice == "3":
+            contact_book.search_contact()
+        elif choice == "4":
+            contact_book.update_contact()
+        elif choice == "5":
+            contact_book.delete_contact()
+        elif choice == "6":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
+
