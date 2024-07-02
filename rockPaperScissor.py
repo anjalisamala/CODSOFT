@@ -46,3 +46,35 @@ def display_result(user_choice, computer_choice, winner):
     else:
         print("It's a tie!")
 
+def main():
+    """
+    Main function to play the Rock-Paper-Scissors game.
+    """
+    print("Rock-Paper-Scissors Game")
+    print("------------------------")
+
+    user_score = 0
+    computer_score = 0
+
+    while True:
+        user_choice = get_user_choice()
+        computer_choice = get_computer_choice()
+        winner = determine_winner(user_choice, computer_choice)
+
+        display_result(user_choice, computer_choice, winner)
+
+        if winner == "user":
+            user_score += 1
+        elif winner == "computer":
+            computer_score += 1
+
+        print(f"User score: {user_score}")
+        print(f"Computer score: {computer_score}")
+
+        play_again = input("Do you want to play again? (yes/no): ").lower()
+        if play_again != 'yes':
+            break
+
+if __name__ == "__main__":
+    main()
+
