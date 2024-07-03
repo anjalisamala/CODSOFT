@@ -1,5 +1,3 @@
-# todo_list.py
-
 todo_list = []
 
 def add_task():
